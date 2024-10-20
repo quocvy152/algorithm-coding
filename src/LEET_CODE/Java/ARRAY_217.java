@@ -19,6 +19,7 @@ public class ARRAY_217 {
 
     // SOLUTION 2: like solution 1, but it using HashMap, and problem solved
     // 11ms Beats 73.68%
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public boolean containsDuplicate(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap();
 

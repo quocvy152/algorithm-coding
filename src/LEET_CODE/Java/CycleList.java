@@ -1,10 +1,10 @@
 package LEET_CODE.Java;
 
-class ListNode {
+class ListNodeInCycleList {
     int val;
-    ListNode next;
+    ListNodeInCycleList next;
 
-    ListNode(int x) {
+    ListNodeInCycleList(int x) {
         val = x;
         next = null;
     }
@@ -17,13 +17,13 @@ class ListNode {
  * - TH2: Nếu con trỏ nhanh chạy và nó bằng null hoặc next của nó bằng null thì nó không phải là Cycle List
  */
 public class CycleList {
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(ListNodeInCycleList head) {
         if (head == null || head.next == null) {
             return false;
         }
 
-        ListNode slow = head;
-        ListNode fast = head.next;
+        ListNodeInCycleList slow = head;
+        ListNodeInCycleList fast = head.next;
 
         while (slow != fast) {
             if (fast == null || fast.next == null) {

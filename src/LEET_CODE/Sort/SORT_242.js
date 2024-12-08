@@ -3,19 +3,29 @@
  * @param {string} t
  * @return {boolean}
  */
-var isAnagram = function(s, t) {
-    if(s.length != t.length) return false;
+// var isAnagram = function(s, t) {
+//     if(s.length != t.length) return false;
 
-    let result = '';
+//     let result = '';
 
-    for(let i = 0; i < s.length; i++) {
-        let idx = t.indexOf(s[i]);
-        let c = t.substring(idx, idx + 1);
-        t = t.substring(0, idx) + t.substring(idx + 1, t.length);
-        result += c;
-    }
+//     for(let i = 0; i < s.length; i++) {
+//         let idx = t.indexOf(s[i]);
+//         let c = t.substring(idx, idx + 1);
+//         t = t.substring(0, idx) + t.substring(idx + 1, t.length);
+//         result += c;
+//     }
     
-    return result == s;
+//     return result == s;
+// };
+
+/**
+ * Improve
+ */
+var isAnagram = function(s, t) {
+    s = s.split('').sort().join('');
+    t = t.split('').sort().join('');
+
+    return s == t;
 };
 
 console.log('Result one: ', isAnagram('anagram', 'nagaram'));
